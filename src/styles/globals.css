@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------
+   FONTS
+   ------------------------------------------------------------- */
+@font-face {
+  font-family: "neueHaasGrotesk";
+  src: url("/fonts/NeueHaasGroteskDisplay_Light-s.p.3czwpo4cyc10j.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "neueHaasGrotesk";
+  src: url("/fonts/NeueHaasGroteskDisplay_Reg-s.p.2rz_4jglqbkg9.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "neueHaasGrotesk";
+  src: url("/fonts/NeueHaasGroteskDisplay_Bold-s.p.0ugq3q2e102mz.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Mono";
+  src: url("/fonts/PPNeueMontrealMono-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Mono";
+  src: url("/fonts/PPNeueMontrealMono-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Mono";
+  src: url("/fonts/PPNeueMontrealMono-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------------------------------------------
+   THEME & DESIGN TOKENS (TAILWIND V4)
+   ------------------------------------------------------------- */
+@theme {
+  --color-background: #0a0a0a;
+  --color-foreground: #f6f6f6;
+  --color-neutral: #9b9b9b;
+  --color-neutral-dark: #6b6b6b;
+  --color-accent: #ff4500;
+  --color-grid-line-dark: #1a1a1a;
+  --color-grid-line-light: #e8e8e8;
+  --color-card-dark: #1e1e1e;
+
+  --font-sans: "neueHaasGrotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "PP Neue Montreal Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+  --text-display-xl: clamp(6.5rem, 4.5rem + 9.5vw, 16rem);
+  --text-display-md: clamp(2.5rem, 1.5rem + 5vw, 7rem);
+  --text-display-sm: clamp(1.875rem, 1.25rem + 2vw, 3.125rem);
+  --text-section: clamp(1.125rem, 0.875rem + 1.15vw, 2.25rem);
+  --text-code: clamp(0.6rem, 0.475rem + 0.35vw, 0.75rem);
+  --text-body-lg: 1.125rem;
+  --text-body: 0.875rem;
+  --text-caption: 0.75rem;
+}
+
+:root {
+  --font-sans: "neueHaasGrotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "PP Neue Montreal Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+  --color-background: #0a0a0a;
+  --color-foreground: #f6f6f6;
+  --color-neutral: #9b9b9b;
+  --color-neutral-dark: #6b6b6b;
+  --color-accent: #ff4500;
+  --color-grid-line-dark: #1a1a1a;
+  --color-grid-line-light: #e8e8e8;
+  --color-card-dark: #1e1e1e;
+
+  --spacing: 0.25rem;
+  --container-2xl: 42rem;
+
+  --text-display-xl: clamp(6.5rem, 4.5rem + 9.5vw, 16rem);
+  --text-display-md: clamp(2.5rem, 1.5rem + 5vw, 7rem);
+  --text-display-sm: clamp(1.875rem, 1.25rem + 2vw, 3.125rem);
+  --text-section: clamp(1.125rem, 0.875rem + 1.15vw, 2.25rem);
+  --text-code: clamp(0.6rem, 0.475rem + 0.35vw, 0.75rem);
+  --text-body-lg: 1.125rem;
+  --text-body: 0.875rem;
+  --text-caption: 0.75rem;
+
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+}
+
+@utility text-display-xl {
+  font-size: var(--text-display-xl);
+}
+@utility text-display-md {
+  font-size: var(--text-display-md);
+}
+@utility text-display-sm {
+  font-size: var(--text-display-sm);
+}
+@utility text-section {
+  font-size: var(--text-section);
+}
+@utility text-code {
+  font-size: var(--text-code);
+}
+@utility text-body-lg {
+  font-size: var(--text-body-lg);
+}
+@utility text-body {
+  font-size: var(--text-body);
+}
+@utility text-caption {
+  font-size: var(--text-caption);
+}
+
+@media (min-width: 96rem) {
+  :root {
+    --text-display-sm: clamp(3.125rem, 1rem + 3.2vw, 4.5rem);
+  }
+}
+
+/* -------------------------------------------------------------
+   GLOBAL BASE STYLES & RESETS
+   ------------------------------------------------------------- */
+html {
+  overscroll-behavior: none;
+  scrollbar-width: none;
+  position: relative;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  line-height: 1;
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Project Scoped Themes */
+.project-theme-leonardo-berselli-portfolio {
+  --font-mono: "PP Neue Montreal Mono", monospace;
+  --background: #0a0a0a;
+  --neutral-dark: #262626;
+  --neutral: #737373;
+  --accent: #e5e5e5;
+  --foreground: #f7f7f7;
+  --destructive: #ef4444;
+}
+
+.project-theme-ignition-finance {
+  --font-mono: "PP Neue Montreal Mono", monospace;
+  --background: #0a0a0a;
+  --neutral-dark: #262626;
+  --neutral: #737373;
+  --accent: #e5e5e5;
+  --foreground: #f7f7f7;
+}
+
+/* Base custom utility helpers */
+.border-grid-line-light {
+  border-color: var(--color-grid-line-light);
+}
+
+.border-grid-line-dark {
+  border-color: var(--color-grid-line-dark);
+}
+
+.bg-card-dark {
+  background-color: var(--color-card-dark);
+}
+
+.wrap-anywhere {
+  overflow-wrap: anywhere;
+}
