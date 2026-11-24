@@ -19,10 +19,10 @@ export default function Header() {
             href="/"
           >
             <span className="text-body md:text-body-lg text-foreground leading-tight font-bold">
-              DANIELE BUSER
+              JINSON SAMUEL
             </span>
             <p className="text-caption md:text-body text-neutral">
-              Creative Developer
+              Full Stack Developer
             </p>
           </Link>
         </div>

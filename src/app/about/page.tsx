@@ -8,6 +8,7 @@ import HeroTitleInView from "@/components/common/HeroTitleInView";
 import TechStackSection from "@/components/about/TechStackSection";
 import HowIWorkSection from "@/components/about/HowIWorkSection";
 import { entranceVariants, motionTokens } from "@/lib/animations";
+import portraitImage from "@/assets/images/regenerated_image_1795495941341.jpg";
 
 export default function AboutPage() {
   return (
@@ -48,7 +49,7 @@ export default function AboutPage() {
                     fill
                     className="scale-[1.01] object-cover"
                     sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 100vw"
-                    src="/images/portrait.webp"
+                    src={portraitImage}
                     priority
                   />
                 </motion.div>

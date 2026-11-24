@@ -47,15 +47,15 @@ export default function ContactsSection() {
               className="col-span-4 justify-self-start sm:col-span-6 md:col-span-8 md:col-start-1 md:justify-self-start lg:col-span-5 lg:col-start-6 lg:justify-self-end xl:col-span-6 xl:col-start-7 2xl:col-span-5 2xl:col-start-8"
             >
               <a
-                href="mailto:buserdaniele@gmail.com"
+                href="mailto:7inson.5amuel@proton.me"
                 className="block w-fit max-w-full"
-                aria-label="Send email to buserdaniele@gmail.com"
+                aria-label="Send email to 7inson.5amuel@proton.me"
               >
                 <h2
                   id="contacts-heading"
                   className="text-display-sm text-[#f6f6f6] leading-[0.95] font-normal tracking-tight wrap-anywhere xl:whitespace-nowrap"
                 >
-                  buserdaniele<wbr />@gmail.com
+                  7inson.5amuel<wbr />@proton.me
                 </h2>
               </a>
 
