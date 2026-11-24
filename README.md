@@ -1,6 +1,6 @@
 # Portfolio
 
-A high-performance portfolio website replicated from [Daniele Buser](https://www.danielebuser.com/) — Creative Developer portfolio, built with Next.js App Router, Tailwind CSS v4, Framer Motion, and Three.js WebGL.
+A high-performance portfolio  — Creative Developer portfolio, built with Next.js App Router, Tailwind CSS v4, Framer Motion, and Three.js WebGL.
 
 ## Features
 
