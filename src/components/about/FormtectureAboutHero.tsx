@@ -111,7 +111,7 @@ export default function FormtectureAboutHero() {
 
           {/* Primary Introduction: Significantly enlarged to fill horizontal width */}
           <p className="font-sans text-2xl sm:text-3xl md:text-[2.25rem] lg:text-[2.6rem] xl:text-[2.85rem] font-medium leading-[1.22] tracking-tight text-[#111111] max-w-3xl mb-6 sm:mb-7">
-            I&apos;m Jinson Samuel — a creative developer building modern digital experiences through design, code and technology.
+            I&apos;m Jinson Samuel — a full stack developer building modern digital experiences through design, code and technology.
           </p>
 
           {/* Supporting Description: Original editorial readability */}
@@ -150,11 +150,7 @@ export default function FormtectureAboutHero() {
             className="flex flex-col items-start sm:items-end justify-center text-left sm:text-right"
           >
             <span
-              className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] font-bold uppercase tracking-tight text-[#080808] whitespace-nowrap leading-none select-none"
-              style={{
-                fontFamily: '"Clash Display", sans-serif',
-                fontWeight: 700,
-              }}
+              className="ml-[3px] mt-[672px] [font-family:Arial] font-bold text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] uppercase tracking-tight text-[#080808] whitespace-nowrap leading-none select-none"
             >
               FULL STACK DEVELOPER
             </span>
