@@ -1,9 +1,19 @@
 import "@/styles/globals.css";
 import type { Metadata, Viewport } from "next";
+import { Bodoni_Moda } from "next/font/google";
 import Header from "@/components/layout/Header";
+
+const bodoniModa = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-serif",
+  display: "swap",
+});
 import Footer from "@/components/layout/Footer";
-import CustomCursor from "@/components/layout/CustomCursor";
+import CursorDotTrail from "@/components/layout/CursorDotTrail";
 import SmoothScroll from "@/components/layout/SmoothScroll";
+import DotGridBackground from "@/components/layout/DotGridBackground";
+import PreloaderWrapper from "@/components/layout/PreloaderWrapper";
 
 export const metadata: Metadata = {
   title: "Daniele Buser | Creative Developer",
@@ -64,17 +74,41 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="has-custom-cursor lenis">
-      <body className="antialiased bg-[#0a0a0a] text-[#f6f6f6] min-h-dvh flex flex-col">
+      <body className={`${bodoniModa.variable} antialiased bg-[#0a0a0a] text-[#f6f6f6] min-h-dvh flex flex-col relative`}>
+        {/* Fixed interactive Framer Dot Grid background */}
+        <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
+          <DotGridBackground
+            dotColor="rgba(255, 255, 255, 0.22)"
+            dotSize={2}
+            dotSpacing={26}
+            orbitSpeed={1.5}
+            impactRadius={120}
+            scaleOnHover={2.0}
+            enableRevolve={true}
+          />
+        </div>
+
         <a
           href="#main-content"
           className="focus:bg-[#ff4500] focus:text-[#f6f6f6] sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-sm focus:px-4 focus:py-2 focus:outline-none"
         >
           Skip to content
         </a>
-        <CustomCursor />
+        <PreloaderWrapper />
+        <CursorDotTrail
+          color="#ff4500"
+          colorInverted="#ffffff"
+          size={12}
+          hoverSize={36}
+          borderWidth={2}
+          spring={0.16}
+          friction={0.52}
+          trailDuration={220}
+          transitionSpeed={0.16}
+        />
         <Header />
         <SmoothScroll>
-          <div className="flex min-h-dvh flex-col">{children}</div>
+          <div className="flex min-h-dvh flex-col relative z-10">{children}</div>
         </SmoothScroll>
         <Footer />
       </body>

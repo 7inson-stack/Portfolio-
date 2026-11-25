@@ -26,6 +26,11 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# cloudflare / temporary binaries & logs
+cloudflared.exe
+server_err.log
+server_out.log
+
 # vercel
 .vercel
 

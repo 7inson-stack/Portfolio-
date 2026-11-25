@@ -1,21 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import BackgroundGrid from "@/components/layout/BackgroundGrid";
+import DotGridBackground from "@/components/layout/DotGridBackground";
 import HeroTitleInView from "@/components/common/HeroTitleInView";
-import { entranceVariants, motionTokens } from "@/lib/animations";
+import FormtectureContactBlock from "@/components/common/FormtectureContactBlock";
 
 export default function ContactsPage() {
   return (
     <main
       id="main-content"
       tabIndex={-1}
-      className="relative z-10 flex h-dvh max-h-dvh w-full flex-1 flex-col justify-start gap-0 overflow-hidden px-4 focus:outline-none bg-background"
+      className="relative z-10 flex min-h-dvh w-full flex-1 flex-col justify-start gap-0 overflow-y-auto px-4 focus:outline-none bg-background"
     >
-      <div className="relative mx-auto flex w-full max-w-480 flex-1 flex-col justify-center pt-14 pb-14 sm:pt-24 sm:pb-20 md:py-20">
-        <BackgroundGrid theme="dark" />
+      <div className="relative mx-auto flex w-full max-w-480 flex-1 flex-col justify-center pt-20 pb-20 sm:pt-28 sm:pb-24 md:py-24">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+          <DotGridBackground
+            dotColor="rgba(255, 255, 255, 0.22)"
+            dotSize={2}
+            dotSpacing={26}
+            orbitSpeed={1.5}
+            impactRadius={120}
+            scaleOnHover={2.0}
+            enableRevolve={true}
+          />
+        </div>
 
-        <div className="relative z-10 flex flex-col gap-40 sm:gap-52 md:gap-64">
+        <div className="relative z-10 flex flex-col gap-28 sm:gap-40 md:gap-[280px]">
           <HeroTitleInView
             as="h1"
             className="text-display-xl text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
@@ -25,40 +35,26 @@ export default function ContactsPage() {
             Hello<span className="text-accent" aria-hidden="true">.</span>
           </HeroTitleInView>
 
-          <section
-            className="text-foreground grid w-full grid-cols-4 items-center gap-4 sm:grid-cols-6 sm:gap-6 md:grid-cols-8 md:gap-12 lg:grid-cols-10 xl:grid-cols-12"
-            aria-labelledby="contacts-heading"
-          >
-            <motion.p
-              className="text-section col-span-4 max-w-2xl leading-[1.15] font-normal sm:col-span-5 md:col-span-7 lg:col-span-5 xl:col-span-5"
-              variants={entranceVariants(motionTokens.delay.long, motionTokens.distance.base)}
-              initial="initial"
-              animate="visible"
-            >
-              If you have a project in mind, feel free to reach out - I&apos;d be glad to help bring your vision to life.
-            </motion.p>
+          {/* Contact Content: Email & Phone moved up to left, Social Links on right */}
+          <div className="grid w-full grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-8 lg:gap-12">
+            {/* Left: Email, Phone, Start A Project */}
+            <div className="md:col-span-8 lg:col-span-8">
+              <FormtectureContactBlock
+                email="7inson.5amuel@proton.me"
+                phone="+91 8319471976"
+              />
+            </div>
 
+            {/* Right: Social Links */}
             <motion.div
-              className="col-span-4 justify-self-start sm:col-span-6 md:col-span-8 md:col-start-1 md:justify-self-start lg:col-span-5 lg:col-start-6 lg:justify-self-end xl:col-span-6 xl:col-start-7 2xl:col-span-5 2xl:col-start-8"
-              variants={entranceVariants(motionTokens.delay.longer, motionTokens.distance.base)}
-              initial="initial"
-              animate="visible"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+              className="md:col-span-4 lg:col-span-4 md:justify-self-end pt-2"
             >
-              <a
-                href="mailto:buserdaniele@gmail.com"
-                className="block w-fit max-w-full"
-                aria-label="Send email to buserdaniele@gmail.com"
-              >
-                <h2
-                  id="contacts-heading"
-                  className="text-display-sm text-foreground leading-[0.95] font-normal tracking-tight wrap-anywhere xl:whitespace-nowrap"
-                >
-                  buserdaniele<wbr />@gmail.com
-                </h2>
-              </a>
-
               <nav
-                className="mt-2 flex flex-wrap items-center justify-start gap-x-4 gap-y-1 md:mt-3"
+                className="flex flex-wrap items-center justify-start md:justify-end gap-x-4 gap-y-1"
                 aria-label="Social and professional links"
               >
                 <a
@@ -92,7 +88,7 @@ export default function ContactsPage() {
                 </a>
               </nav>
             </motion.div>
-          </section>
+          </div>
         </div>
       </div>
     </main>

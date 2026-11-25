@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useCallback, useEffect } from "react";
-import BackgroundGrid from "./BackgroundGrid";
+import DotGridBackground from "./DotGridBackground";
 
 interface StickyPageLayoutProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ interface StickyPageLayoutProps {
 export default function StickyPageLayout({
   children,
   contacts,
-  theme = "light",
+  theme = "dark",
 }: StickyPageLayoutProps) {
   const [height, setHeight] = useState<number>(0);
 
@@ -46,8 +46,16 @@ export default function StickyPageLayout({
         className="sticky z-0 mx-auto flex w-full max-w-480 flex-col gap-0"
         style={{ top: topStyle }}
       >
-        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-          <BackgroundGrid theme={theme} />
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+          <DotGridBackground
+            dotColor="rgba(255, 255, 255, 0.22)"
+            dotSize={2}
+            dotSpacing={26}
+            orbitSpeed={1.5}
+            impactRadius={120}
+            scaleOnHover={2.0}
+            enableRevolve={true}
+          />
         </div>
         <div className="relative z-10">{children}</div>
       </div>

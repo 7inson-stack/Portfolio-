@@ -105,7 +105,7 @@ export default function ProjectCard({
 
           {/* Dark scrim overlay */}
           <div
-            className={`bg-[#0a0a0a]/25 pointer-events-none absolute inset-0 transition-opacity duration-300 ${
+            className={`bg-[#ffffff]/25 pointer-events-none absolute inset-0 transition-opacity duration-300 ${
               isHovered ? "opacity-100" : "opacity-0"
             }`}
             aria-hidden="true"
@@ -115,12 +115,11 @@ export default function ProjectCard({
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-2">
             <div className="flex w-full items-center justify-center">
               <motion.div
-                className="border-[#f6f6f6]/15 bg-[#0a0a0a] relative aspect-2304/1302 w-[90%] overflow-hidden rounded-xs border shadow-[0_16px_32px_-8px_rgba(0,0,0,0.4),0_4px_10px_-2px_rgba(0,0,0,0.2)] transition-all duration-300"
+                className="border-foreground bg-background relative aspect-2304/1302 w-[90%] overflow-hidden rounded-xs border transition-all duration-300"
                 style={{
                   x: springX,
                   y: springY,
                   opacity: isHovered ? 1 : 0,
-                  filter: isHovered ? "blur(0px)" : "blur(6px)",
                   scale: isHovered ? 1 : 0.96,
                 }}
               >

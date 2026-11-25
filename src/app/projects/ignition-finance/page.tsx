@@ -246,7 +246,7 @@ export default function IgnitionFinancePage() {
                 {/* Floating Centered Video with Drop Shadow */}
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-3 sm:p-6 lg:p-8">
                   <div className="flex size-full items-center justify-center">
-                    <div className="border-foreground/15 bg-background relative aspect-2304/1302 h-[88%] max-w-[94%] overflow-hidden rounded-xs border shadow-[0_20px_50px_-10px_rgba(0,0,0,0.6),0_6px_16px_-4px_rgba(0,0,0,0.4)]">
+                    <div className="border-foreground/15 bg-background relative aspect-2304/1302 h-[88%] max-w-[94%] overflow-hidden rounded-xs border shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15),0_6px_16px_-4px_rgba(0,0,0,0.1)]">
                       <video
                         ref={videoRef}
                         src="/projects/ignition-finance/ignition-finance-showcase.mp4"

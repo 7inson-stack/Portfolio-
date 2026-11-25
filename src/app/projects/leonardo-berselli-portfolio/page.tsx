@@ -201,10 +201,10 @@ export default function LeonardoBerselliPage() {
     const chars = " .:-=+*#%@";
 
     const render = () => {
-      ctx.fillStyle = "#1e1e1e";
+      ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = isEngineActive ? "#f6f6f6" : "#737373";
+      ctx.fillStyle = isEngineActive ? "#000000" : "#000000";
       ctx.font = "bold 9px monospace";
 
       const rows = 24;
@@ -545,7 +545,7 @@ export default function LeonardoBerselliPage() {
                           </div>
 
                           <div className="grid grid-cols-12 items-stretch gap-2">
-                            <div className="col-span-12 sm:col-span-7 flex w-full items-center justify-between border border-foreground/15 px-3 py-2 bg-black/40">
+                            <div className="col-span-12 sm:col-span-7 flex w-full items-center justify-between border border-foreground/15 px-3 py-2 bg-white/40">
                               <div className="flex items-center gap-3">
                                 <span className="text-caption font-mono text-neutral uppercase">Engine</span>
                                 <button
@@ -581,7 +581,7 @@ export default function LeonardoBerselliPage() {
                               <div className="flex items-center justify-center border border-foreground/10 px-1 py-1 font-mono text-neutral">
                                 STABLE
                               </div>
-                              <div className="flex items-center justify-center border border-foreground/10 px-1 py-1 font-mono text-[#ff4500]">
+                              <div className="flex items-center justify-center border border-foreground/10 px-1 py-1 font-mono text-foreground">
                                 ERR_0
                               </div>
                             </div>
@@ -589,7 +589,7 @@ export default function LeonardoBerselliPage() {
                         </div>
 
                         {/* Telemetry Progress & Grid */}
-                        <div className="mt-3 border border-foreground/10 p-3 bg-black/40">
+                        <div className="mt-3 border border-foreground/10 p-3 bg-white/40">
                           <div className="flex items-center justify-between text-xs text-neutral font-mono uppercase mb-1.5">
                             <div className="flex items-center gap-2 text-foreground">
                               <div className="size-2 rounded-full bg-foreground animate-pulse" />
@@ -625,7 +625,7 @@ export default function LeonardoBerselliPage() {
 
                         {/* Client Hardware & Session Telemetry */}
                         <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-[10px]">
-                          <div className="border border-foreground/10 p-2.5 bg-black/40">
+                          <div className="border border-foreground/10 p-2.5 bg-white/40">
                             <div className="text-neutral font-mono uppercase mb-1">CLIENT_ENV</div>
                             <div className="flex justify-between border-b border-foreground/10 py-0.5">
                               <span className="text-neutral">OS</span>
@@ -645,7 +645,7 @@ export default function LeonardoBerselliPage() {
                             </div>
                           </div>
 
-                          <div className="border border-foreground/10 p-2.5 bg-black/40">
+                          <div className="border border-foreground/10 p-2.5 bg-white/40">
                             <div className="text-neutral font-mono uppercase mb-1">LOCAL_METRICS</div>
                             <div className="flex justify-between border-b border-foreground/10 py-0.5">
                               <span className="text-neutral">IPV4_ADDR</span>

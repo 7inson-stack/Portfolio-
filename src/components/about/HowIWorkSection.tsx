@@ -342,7 +342,7 @@ export default function HowIWorkSection() {
               type="button"
               onClick={togglePause}
               aria-label={isPaused ? "Play videos" : "Pause videos"}
-              className="bg-background/60 text-foreground hover:bg-background/80 absolute right-2 bottom-2 z-10 flex size-8 items-center justify-center rounded-full backdrop-blur-sm transition-colors cursor-pointer"
+              className="bg-background text-foreground hover:bg-neutral-dark absolute right-2 bottom-2 z-10 flex size-8 items-center justify-center rounded-full transition-colors cursor-pointer"
             >
               {isPaused ? (
                 <Play className="size-3.5" strokeWidth={2} aria-hidden="true" />
