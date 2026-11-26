@@ -53,9 +53,9 @@ export default function Header() {
     <header className="pointer-events-none fixed top-0 left-1/2 z-50 w-full max-w-480 -translate-x-1/2 p-4 mix-blend-difference">
       <div className="flex w-full items-start justify-between sm:grid sm:grid-cols-6 sm:gap-4 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12">
         {/* BRAND / LOGO on Upper-Left */}
-        <div className="pointer-events-auto flex shrink-0 items-start sm:col-span-2 sm:col-start-1 text-[17px]">
+        <div className="pointer-events-auto flex shrink-0 items-start sm:col-span-2 sm:col-start-1">
           <Link
-            className="pointer-events-auto flex w-fit flex-col items-start select-none group"
+            className="pointer-events-auto flex w-fit flex-col items-start gap-0.5 select-none group"
             href="/"
             onClick={(e) => handleSmoothScrollTop(e, "/")}
           >
@@ -63,7 +63,7 @@ export default function Header() {
               variants={getVariants(0)}
               initial="initial"
               animate="visible"
-              className="text-[27px] text-foreground leading-tight font-bold tracking-tight"
+              className="font-akzidenz text-type-header text-foreground leading-[1.15] font-bold tracking-tight"
             >
               JINSON SAMUEL
             </motion.span>
@@ -71,7 +71,7 @@ export default function Header() {
               variants={getVariants(0.1)}
               initial="initial"
               animate="visible"
-              className="text-[25px] text-neutral"
+              className="text-type-body-2 font-normal leading-[1.35] text-neutral"
             >
               Full Stack Developer
             </motion.p>
@@ -80,8 +80,8 @@ export default function Header() {
 
         {/* NAVIGATION LINKS on Upper-Right */}
         <div className="pointer-events-auto flex flex-1 justify-end sm:col-span-3 sm:col-start-4 sm:block md:col-span-3 md:col-start-6 lg:col-span-3 lg:col-start-8 xl:col-span-3 xl:col-start-10 2xl:col-span-2 2xl:col-start-11">
-          <nav aria-label="Main navigation" className="w-full max-w-50 select-none sm:max-w-none">
-            <ul className="flex w-full justify-between">
+          <nav aria-label="Main navigation" className="w-full max-w-64 select-none sm:max-w-none">
+            <ul className="flex w-full items-center justify-end gap-4 sm:justify-between sm:gap-6">
               {NAV_ITEMS.map((item, index) => {
                 const isActive =
                   item.href === "/"
@@ -97,12 +97,8 @@ export default function Header() {
                       animate="visible"
                     >
                       <Link
-                        className={`text-[27px] inline-flex items-center uppercase transition-colors duration-150 ${
-                          index === 0
-                            ? "mt-[-10px] -mb-2 ml-[-156px] pt-[8px] pb-[8px]"
-                            : "-my-2 py-2"
-                        } ${
-                          isActive ? "font-bold text-foreground" : "font-normal text-neutral hover:text-foreground"
+                        className={`text-type-header -my-2 inline-flex items-center py-2 font-bold leading-[1.15] tracking-tight uppercase transition-colors duration-150 ${
+                          isActive ? "text-foreground" : "text-neutral hover:text-foreground"
                         }`}
                         aria-current={isActive ? "page" : undefined}
                         href={item.href}

@@ -1,12 +1,19 @@
 import "@/styles/globals.css";
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda } from "next/font/google";
+import { Bodoni_Moda, Hanken_Grotesk } from "next/font/google";
 import Header from "@/components/layout/Header";
 
 const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-serif",
+  display: "swap",
+});
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-akzidenz-fallback",
   display: "swap",
 });
 import Footer from "@/components/layout/Footer";
@@ -73,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="has-custom-cursor lenis">
+    <html lang="en" className={`${hankenGrotesk.variable} has-custom-cursor lenis`}>
       <body className={`${bodoniModa.variable} antialiased bg-[#0a0a0a] text-[#f6f6f6] min-h-dvh flex flex-col relative`}>
         {/* Fixed interactive Framer Dot Grid background */}
         <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">

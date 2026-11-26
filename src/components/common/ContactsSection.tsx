@@ -29,66 +29,67 @@ export default function ContactsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-display-xl text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
+            className="mt-[0px] pt-[50px] text-display-xl text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
             aria-label="Say Hello - Contact section heading"
           >
             Say <br className="md:hidden" />
             Hello<span className="text-accent" aria-hidden="true">.</span>
           </motion.h2>
 
-          {/* Contact Content: Email & Phone moved up to left, Social Links on right */}
-          <div className="grid w-full grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-8 lg:gap-12">
-            {/* Left: Email, Phone, Start A Project */}
-            <div className="md:col-span-8 lg:col-span-8">
-              <FormtectureContactBlock
-                email="7inson.5amuel@proton.me"
-                phone="+91 8319471976"
-              />
-            </div>
-
-            {/* Right: Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
-              className="md:col-span-4 lg:col-span-4 md:justify-self-end pt-2"
-            >
-              <nav
-                className="flex flex-wrap items-center justify-start md:justify-end gap-x-4 gap-y-1"
-                aria-label="Social and professional links"
-              >
-                <a
-                  href="https://linkedin.com/in/daniele-buser"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
+          {/* Contact Content: Row 1 = Email + Social Links, Row 2 = Phone + Start A Project */}
+          <div className="mt-[-4px] ml-[2px] pt-[1px] w-full">
+            <FormtectureContactBlock
+              email="7inson.5amuel@proton.me"
+              phone="+91 8319471976"
+              containerClassName="mt-[-145px]"
+              emailContainerClassName="[font-family:system-ui]"
+              emailTextClassName="text-[30px]"
+              phoneContainerClassName="mt-[-1px]"
+              phoneTextClassName="text-[30px]"
+              socialLinks={
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
                 >
-                  LinkedIn<span className="sr-only"> (opens in new tab)</span>
-                </a>
-                <span className="text-neutral text-body md:text-body-lg select-none" aria-hidden="true">
-                  |
-                </span>
-                <a
-                  href="https://github.com/dbuser03"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
-                >
-                  GitHub<span className="sr-only"> (opens in new tab)</span>
-                </a>
-                <span className="text-neutral text-body md:text-body-lg select-none" aria-hidden="true">
-                  |
-                </span>
-                <a
-                  href="/pages/resume.html"
-                  download
-                  className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
-                >
-                  Resume
-                </a>
-              </nav>
-            </motion.div>
+                  <nav
+                    className="flex flex-wrap items-center justify-start md:justify-end gap-x-4 gap-y-1"
+                    aria-label="Social and professional links"
+                  >
+                    <a
+                      href="https://linkedin.com/in/daniele-buser"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
+                    >
+                      LinkedIn<span className="sr-only"> (opens in new tab)</span>
+                    </a>
+                    <span className="text-neutral text-body md:text-body-lg select-none" aria-hidden="true">
+                      |
+                    </span>
+                    <a
+                      href="https://github.com/dbuser03"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
+                    >
+                      GitHub<span className="sr-only"> (opens in new tab)</span>
+                    </a>
+                    <span className="text-neutral text-body md:text-body-lg select-none" aria-hidden="true">
+                      |
+                    </span>
+                    <a
+                      href="/pages/resume.html"
+                      download
+                      className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
+                    >
+                      Resume
+                    </a>
+                  </nav>
+                </motion.div>
+              }
+            />
           </div>
         </div>
       </div>

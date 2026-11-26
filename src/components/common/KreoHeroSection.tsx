@@ -108,12 +108,7 @@ export default function KreoHeroSection() {
       >
         <h1
           aria-label="JINSON SAMUEL."
-          className="w-full text-left font-sans text-[clamp(2.75rem,8.3vw,11.4rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.035em] text-[#050505] whitespace-nowrap overflow-hidden text-ellipsis flex items-baseline justify-start"
-          style={{
-            fontFamily:
-              '"neueHaasGrotesk", "PP Neue Montreal", "Helvetica Neue", Arial, sans-serif',
-            fontWeight: 800,
-          }}
+          className="w-full text-left font-akzidenz text-[clamp(2.75rem,8.3vw,11.4rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.035em] text-[#050505] whitespace-nowrap overflow-hidden text-ellipsis flex items-baseline justify-start"
         >
           <span>JINSON SAMUEL</span>
           {/* Orange square accent after the name */}
@@ -144,7 +139,7 @@ export default function KreoHeroSection() {
             <span className="font-mono text-[0.68rem] sm:text-xs uppercase tracking-[0.22em] text-[#6b6b6b] font-medium">
               [ CREATIVE DEVELOPER ]
             </span>
-            <span className="mt-1 font-sans text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-tight text-[#050505]">
+            <span className="mt-1 font-akzidenz text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-tight text-[#050505]">
               JINSON SAMUEL
             </span>
           </motion.div>

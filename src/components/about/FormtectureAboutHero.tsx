@@ -67,39 +67,33 @@ export default function FormtectureAboutHero() {
       >
         <h1
           aria-label="JINSON SAMUEL"
-          className="w-full text-center text-[clamp(2.4rem,9.6vw,12.2rem)] uppercase leading-[0.82] tracking-[-0.035em] text-[#000000] whitespace-nowrap flex items-baseline justify-center"
-          style={{
-            fontFamily: '"Clash Display", sans-serif',
-            fontWeight: 700,
-            wordSpacing: "0.26em",
-          }}
+          className="font-akzidenz font-black w-full text-center uppercase leading-[0.9] [word-spacing:0.22em] text-[#000000] whitespace-nowrap flex items-baseline justify-center"
         >
-          <span>JINSON SAMUEL</span>
+          <span className="inline-block origin-center scale-x-[1.32] text-[clamp(1.6rem,7.6vw,10.2rem)] tracking-[0.015em] [-webkit-text-stroke:0.02em_#000000]">
+            JINSON SAMUEL
+          </span>
         </h1>
       </motion.div>
 
       {/* =========================================================
           2. CONTENT COMPOSITION (Optimized Hero Proportions & Spacing)
-          - Left: Significantly enlarged Hey. headline, primary intro, and supporting description
-          - Right: Substantially enlarged portrait image occupying more hero section height and width
-          - Spacing: Reduced empty gap, distributed effectively across the viewport
-          - JINSON SAMUEL is strictly preserved and untouched
+          - Left: Dominant Main Title (Hey.), Subheading, Normal Text 1 & Normal Text 2
+          - Right: Portrait image with role label
           ========================================================= */}
       <div className="relative z-10 mt-auto flex w-full flex-col lg:flex-row items-start lg:items-end justify-between gap-10 lg:gap-8 pt-10 sm:pt-14 md:pt-16">
         
-        {/* LEFT SIDE: Expanded Typography & Content */}
+        {/* LEFT SIDE: Typography Hierarchy */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="flex w-full max-w-4xl flex-1 flex-col items-start text-left pr-0 lg:pr-6 xl:pr-10"
+          className="mt-[3px] pt-8 sm:pt-16 lg:pt-[110px] flex w-full max-w-4xl flex-1 flex-col items-start text-left pr-0 lg:pr-6 xl:pr-10"
         >
-          {/* Heading: Hey. with orange square dot - Significantly larger */}
+          {/* Main Title: Hey. (132px desktop / 48px mobile, weight 800, line-height 0.94) */}
           <h2
-            className="text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[9.5rem] font-bold tracking-tight text-[#080808] leading-[0.92] mb-6 sm:mb-8 flex items-baseline"
+            className="text-type-title font-extrabold tracking-[-0.03em] text-[#080808] leading-[0.94] mb-6 sm:mb-8 flex items-baseline"
             style={{
               fontFamily: '"Clash Display", "PP Neue Montreal", sans-serif',
-              fontWeight: 700,
             }}
           >
             <span>Hey</span>
@@ -109,29 +103,29 @@ export default function FormtectureAboutHero() {
             />
           </h2>
 
-          {/* Primary Introduction: Significantly enlarged to fill horizontal width */}
-          <p className="font-sans text-2xl sm:text-3xl md:text-[2.25rem] lg:text-[2.6rem] xl:text-[2.85rem] font-medium leading-[1.22] tracking-tight text-[#111111] max-w-3xl mb-6 sm:mb-7">
+          {/* Subheading: 30px desktop / 22px mobile, weight 600, line-height 1.2 */}
+          <p className="font-sans text-type-subheading font-semibold leading-[1.2] tracking-[-0.015em] text-[#111111] max-w-3xl mb-6 sm:mb-7">
             I&apos;m Jinson Samuel — a full stack developer building modern digital experiences through design, code and technology.
           </p>
 
-          {/* Supporting Description: Original editorial readability */}
-          <p className="font-sans text-base sm:text-lg md:text-[1.25rem] lg:text-[1.35rem] font-normal leading-[1.62] text-[#555555] max-w-2xl mb-8 sm:mb-10">
+          {/* Normal Text 1: 22px desktop / 17px mobile, weight 400, line-height 1.5 */}
+          <p className="font-sans text-type-body-1 font-normal leading-[1.5] text-[#4a4a4a] max-w-2xl mb-8 sm:mb-10">
             I combine creative thinking, modern frontend development and interactive experiences to turn ideas into refined digital products.
           </p>
 
-          {/* Metadata with orange bullet separators */}
-          <div className="flex flex-wrap items-center gap-2.5 text-xs sm:text-[0.88rem] font-mono uppercase tracking-[0.2em] text-[#4a4a4a] mb-8 sm:mb-10">
+          {/* Normal Text 2: 18px desktop / 15px mobile, weight 400, line-height 1.5 */}
+          <div className="flex flex-wrap items-center gap-2.5 text-type-body-2 font-mono font-normal leading-[1.5] uppercase tracking-[0.16em] text-[#555555] mb-8 sm:mb-10">
             <span>FULL STACK DEVELOPER</span>
-            <span className="text-accent text-[0.85rem] leading-none">•</span>
+            <span className="text-accent text-[0.85em] leading-none">•</span>
             <span>INDIA</span>
-            <span className="text-accent text-[0.85rem] leading-none">•</span>
+            <span className="text-accent text-[0.85em] leading-none">•</span>
             <span>EST. 2026</span>
           </div>
 
           {/* Minimal Outlined Button: EXPLORE STACK */}
           <Link
             href="#tech-stack-section"
-            className="group inline-flex items-center gap-3.5 border border-black/25 bg-transparent px-7 py-4 text-xs sm:text-[0.92rem] font-mono tracking-[0.18em] uppercase text-[#080808] transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
+            className="group inline-flex items-center gap-3.5 border border-black/25 bg-transparent px-7 py-4 text-type-body-2 font-mono font-normal leading-[1.2] tracking-[0.16em] uppercase text-[#080808] transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
           >
             <span>EXPLORE STACK</span>
             <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -150,7 +144,7 @@ export default function FormtectureAboutHero() {
             className="flex flex-col items-start sm:items-end justify-center text-left sm:text-right"
           >
             <span
-              className="ml-[3px] mt-[672px] [font-family:Arial] font-bold text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] uppercase tracking-tight text-[#080808] whitespace-nowrap leading-none select-none"
+              className="ml-[3px] lg:mt-[672px] [font-family:Arial] font-bold text-type-body-1 uppercase tracking-tight text-[#080808] whitespace-nowrap leading-[1.1] select-none"
             >
               FULL STACK DEVELOPER
             </span>
