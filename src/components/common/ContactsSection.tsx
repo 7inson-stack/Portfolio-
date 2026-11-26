@@ -23,13 +23,13 @@ export default function ContactsSection() {
             enableRevolve={true}
           />
         </div>
-        <div className="relative z-10 flex flex-col gap-28 sm:gap-40 md:gap-[280px]">
+        <div className="relative z-10 mb-[-48px] flex flex-col gap-28 sm:gap-40 md:gap-[280px]">
           <motion.h2
             initial={{ opacity: 0, y: 48 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-[0px] pt-[50px] text-display-xl text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
+            className="mt-[-200px] pt-[58px] text-[198px] text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
             aria-label="Say Hello - Contact section heading"
           >
             Say <br className="md:hidden" />
@@ -41,7 +41,7 @@ export default function ContactsSection() {
             <FormtectureContactBlock
               email="7inson.5amuel@proton.me"
               phone="+91 8319471976"
-              containerClassName="mt-[-145px]"
+              containerClassName="mt-[-88px]"
               emailContainerClassName="[font-family:system-ui]"
               emailTextClassName="text-[30px]"
               phoneContainerClassName="mt-[-1px]"
