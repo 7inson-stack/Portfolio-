@@ -115,7 +115,7 @@ export default function RootLayout({
         />
         <Header />
         <SmoothScroll>
-          <div className="flex min-h-dvh flex-col relative z-10">{children}</div>
+          <div className="flex min-h-dvh flex-col relative z-10 scale-wrapper">{children}</div>
         </SmoothScroll>
         <Footer />
       </body>

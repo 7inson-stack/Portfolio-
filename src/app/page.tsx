@@ -16,7 +16,7 @@ export default function HomePage() {
       aria-label="Projects page main content"
     >
       <StickyPageLayout contacts={<ContactsSection />}>
-        <section className="flex min-h-[max(65vh,24rem)] w-full flex-col justify-center pt-16 sm:pt-20 md:pt-0">
+        <section className="flex min-h-screen w-full flex-col justify-center">
           <HeroTitleInView
             as="h1"
             className="text-display-xl text-background relative z-10 flex w-full flex-col leading-[0.95] tracking-tight md:flex-row md:items-baseline md:justify-between md:leading-[0.85]"

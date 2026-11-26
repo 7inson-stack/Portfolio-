@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
+import ParticleTextHeading from "./ParticleTextHeading";
+import ParticleEffectsWrapper from "./ParticleEffectsWrapper";
 
 export default function FormtectureAboutHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,14 +67,7 @@ export default function FormtectureAboutHero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h1
-          aria-label="JINSON SAMUEL"
-          className="font-akzidenz font-black w-full text-center uppercase leading-[0.9] [word-spacing:0.22em] text-[#000000] whitespace-nowrap flex items-baseline justify-center"
-        >
-          <span className="inline-block origin-center scale-x-[1.32] text-[clamp(1.6rem,7.6vw,10.2rem)] tracking-[0.015em] [-webkit-text-stroke:0.02em_#000000]">
-            JINSON SAMUEL
-          </span>
-        </h1>
+        <ParticleTextHeading />
       </motion.div>
 
       {/* =========================================================
@@ -89,11 +84,12 @@ export default function FormtectureAboutHero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mt-[3px] pt-8 sm:pt-16 lg:pt-[110px] flex w-full max-w-4xl flex-1 flex-col items-start text-left pr-0 lg:pr-6 xl:pr-10"
         >
-          {/* Main Title: Hey. (132px desktop / 48px mobile, weight 800, line-height 0.94) */}
+          {/* Main Title: Hey. */}
           <h2
-            className="text-type-title font-extrabold tracking-[-0.03em] text-[#080808] leading-[0.94] mb-6 sm:mb-8 flex items-baseline"
+            className="text-type-title font-extrabold tracking-[-0.035em] text-[#080808] leading-[0.92] mb-6 sm:mb-8 flex items-baseline"
             style={{
               fontFamily: '"Clash Display", "PP Neue Montreal", sans-serif',
+              fontWeight: 800,
             }}
           >
             <span>Hey</span>
@@ -103,13 +99,25 @@ export default function FormtectureAboutHero() {
             />
           </h2>
 
-          {/* Subheading: 30px desktop / 22px mobile, weight 600, line-height 1.2 */}
-          <p className="font-sans text-type-subheading font-semibold leading-[1.2] tracking-[-0.015em] text-[#111111] max-w-3xl mb-6 sm:mb-7">
-            I&apos;m Jinson Samuel — a full stack developer building modern digital experiences through design, code and technology.
+          {/* Hero Description: Clean, elegant, light/regular sans-serif matching Image 1 */}
+          <p
+            className="text-2xl sm:text-3xl md:text-[2.25rem] lg:text-[2.5rem] xl:text-[2.75rem] font-normal leading-[1.22] tracking-[-0.02em] text-[#111111] max-w-3xl mb-6 sm:mb-7"
+            style={{
+              fontFamily: '"PP Neue Montreal", "neueHaasGrotesk", sans-serif',
+              fontWeight: 400,
+            }}
+          >
+            I&apos;m Jinson Samuel — a creative developer building modern digital experiences through design, code and technology.
           </p>
 
-          {/* Normal Text 1: 22px desktop / 17px mobile, weight 400, line-height 1.5 */}
-          <p className="font-sans text-type-body-1 font-normal leading-[1.5] text-[#4a4a4a] max-w-2xl mb-8 sm:mb-10">
+          {/* Supporting Description: Medium-light / regular font weight matching Image 1 */}
+          <p
+            className="text-base sm:text-lg md:text-[1.2rem] lg:text-[1.3rem] font-normal leading-[1.58] text-[#555555] max-w-2xl mb-8 sm:mb-10"
+            style={{
+              fontFamily: '"PP Neue Montreal", "neueHaasGrotesk", sans-serif',
+              fontWeight: 400,
+            }}
+          >
             I combine creative thinking, modern frontend development and interactive experiences to turn ideas into refined digital products.
           </p>
 

@@ -48,7 +48,7 @@ export default function KreoHeroSection() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       aria-label="Hero Section"
-      className="relative z-10 flex min-h-[max(92vh,46rem)] w-full flex-col justify-between pt-16 pb-8 sm:pt-20 sm:pb-12 md:pt-16 md:pb-16 select-none overflow-hidden"
+      className="relative z-10 flex min-h-screen w-full flex-col justify-between pt-8 pb-4 sm:pt-12 sm:pb-6 md:pt-8 md:pb-8 select-none overflow-hidden"
     >
       {/* =========================================================
           3. GEOMETRIC BACKGROUND GRAPHICS (Kreofolio Diamonds)
@@ -169,7 +169,7 @@ export default function KreoHeroSection() {
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative w-[240px] sm:w-[260px] md:w-[290px] lg:w-[320px] h-[330px] sm:h-[360px] md:h-[400px] lg:h-[430px] overflow-hidden bg-neutral-900 shadow-xl cursor-pointer shrink-0"
+            className="relative w-[clamp(200px,20vw,320px)] h-[clamp(260px,30vh,430px)] overflow-hidden bg-neutral-900 shadow-xl cursor-pointer shrink-0"
           >
             <Image
               src="/images/PROFILE_2.jpeg"

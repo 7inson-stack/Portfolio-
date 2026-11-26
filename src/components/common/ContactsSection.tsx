@@ -1,94 +1,58 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import DotGridBackground from "@/components/layout/DotGridBackground";
 import FormtectureContactBlock from "@/components/common/FormtectureContactBlock";
 
-export default function ContactsSection() {
+interface ContactsSectionProps {
+  standalone?: boolean;
+}
+
+export default function ContactsSection({ standalone = false }: ContactsSectionProps) {
+  const HeadingTag = standalone ? motion.h1 : motion.h2;
+
   return (
     <section
       id="project-contacts"
-      className="bg-background text-foreground before:bg-background relative -mx-4 flex min-h-dvh flex-col justify-center px-4 before:absolute before:bottom-full before:left-0 before:h-0.5 before:w-full"
+      className={`text-foreground relative flex flex-col overflow-hidden ${
+        standalone
+          ? "w-full bg-transparent"
+          : "bg-background -mx-4 px-4"
+      }`}
     >
-      <div className="relative mx-auto flex w-full max-w-480 flex-1 flex-col justify-center pt-14 pb-14 sm:pt-24 sm:pb-20 md:py-20">
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-          <DotGridBackground
-            dotColor="rgba(255, 255, 255, 0.22)"
-            dotSize={2}
-            dotSpacing={26}
-            orbitSpeed={1.5}
-            impactRadius={120}
-            scaleOnHover={2.0}
-            enableRevolve={true}
-          />
-        </div>
-        <div className="relative z-10 mb-[-48px] flex flex-col gap-28 sm:gap-40 md:gap-[280px]">
-          <motion.h2
+      <div className="relative mx-auto flex w-full max-w-480 flex-col pt-20 pb-6 sm:pt-24 sm:pb-8 md:pt-20 md:pb-8">
+        {!standalone && (
+          <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+            <DotGridBackground
+              dotColor="rgba(255, 255, 255, 0.22)"
+              dotSize={2}
+              dotSpacing={26}
+              orbitSpeed={1.5}
+              impactRadius={120}
+              scaleOnHover={2.0}
+              enableRevolve={true}
+            />
+          </div>
+        )}
+
+        <div className="relative z-10 flex flex-col gap-12 sm:gap-16 md:gap-24">
+          <HeadingTag
             initial={{ opacity: 0, y: 48 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-[-200px] pt-[58px] text-[198px] text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
-            aria-label="Say Hello - Contact section heading"
+            className="text-display-xl text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
+            aria-label={standalone ? "Say Hello - Contact page heading" : "Say Hello - Contact section heading"}
           >
             Say <br className="md:hidden" />
             Hello<span className="text-accent" aria-hidden="true">.</span>
-          </motion.h2>
+          </HeadingTag>
 
-          {/* Contact Content: Row 1 = Email + Social Links, Row 2 = Phone + Start A Project */}
-          <div className="mt-[-4px] ml-[2px] pt-[1px] w-full">
+          {/* Contact Content: Two-column layout */}
+          <div className="w-full px-2 sm:px-4 md:px-8 lg:px-12">
             <FormtectureContactBlock
               email="7inson.5amuel@proton.me"
               phone="+91 8319471976"
-              containerClassName="mt-[-88px]"
-              emailContainerClassName="[font-family:system-ui]"
-              emailTextClassName="text-[30px]"
-              phoneContainerClassName="mt-[-1px]"
-              phoneTextClassName="text-[30px]"
-              socialLinks={
-                <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
-                >
-                  <nav
-                    className="flex flex-wrap items-center justify-start md:justify-end gap-x-4 gap-y-1"
-                    aria-label="Social and professional links"
-                  >
-                    <a
-                      href="https://linkedin.com/in/daniele-buser"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
-                    >
-                      LinkedIn<span className="sr-only"> (opens in new tab)</span>
-                    </a>
-                    <span className="text-neutral text-body md:text-body-lg select-none" aria-hidden="true">
-                      |
-                    </span>
-                    <a
-                      href="https://github.com/dbuser03"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
-                    >
-                      GitHub<span className="sr-only"> (opens in new tab)</span>
-                    </a>
-                    <span className="text-neutral text-body md:text-body-lg select-none" aria-hidden="true">
-                      |
-                    </span>
-                    <a
-                      href="/pages/resume.html"
-                      download
-                      className="text-body md:text-body-lg text-neutral hover:text-foreground transition-colors"
-                    >
-                      Resume
-                    </a>
-                  </nav>
-                </motion.div>
-              }
             />
           </div>
         </div>

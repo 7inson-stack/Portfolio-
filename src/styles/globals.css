@@ -284,7 +284,17 @@ button:focus-visible,
   --foreground: #f7f7f7;
 }
 
-/* Base custom utility helpers */
+
+/* Scale wrapper to render site at 75% zoom while filling viewport */
+.scale-wrapper {
+  --scale: 0.75;
+  transform: scale(var(--scale));
+  transform-origin: top center;
+  width: calc(100% / var(--scale));
+  min-height: calc(100vh / var(--scale));
+  margin: 0 auto;
+}
+
 .border-grid-line-light {
   border-color: var(--color-grid-line-light);
 }
@@ -299,4 +309,37 @@ button:focus-visible,
 
 .wrap-anywhere {
   overflow-wrap: anywhere;
+}
+
+/* -------------------------------------------------------------
+   SCALE WRAPPER FOR GLOBAL ZOOM
+   ------------------------------------------------------------- */
+:root {
+  /* Default scale factor for desktop (75%) */
+  --scale-factor: 0.75;
+}
+/* Adjust scale for tablet and mobile if needed */
+@media (max-width: 1024px) {
+  :root { --scale-factor: 0.85; }
+}
+@media (max-width: 640px) {
+  :root { --scale-factor: 1; }
+}
+.scale-wrapper {
+  /* Expand dimensions to counteract scaling so the content fills the viewport */
+  width: calc(100% / var(--scale-factor));
+  height: calc(100% / var(--scale-factor));
+  transform: scale(var(--scale-factor));
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+/* Crop /contacts page height to its actual content without affecting other pages */
+body:has([data-contacts-page="true"]) {
+  min-height: 0;
+}
+
+body:has([data-contacts-page="true"]) .scale-wrapper {
+  min-height: 0;
+  height: auto;
 }
