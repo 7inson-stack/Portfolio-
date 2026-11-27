@@ -19,8 +19,8 @@ export default function FormtectureContactBlock({
   const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
 
   const socialLinks = [
-    { label: "Instagram", href: "https://instagram.com/7inson" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/7inson" },
+    { label: "Instagram", href: "https://instagram.com/7inu.5amuel" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/jinsonsamuel" },
   ];
 
   return (

@@ -40,7 +40,11 @@ export default function ContactsSection({ standalone = false }: ContactsSectionP
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-display-xl text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
+            className={
+              standalone
+                ? "mt-[200px] pb-0 mb-[-20px] text-[196.72px] text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
+                : "text-display-xl text-foreground leading-[0.95] tracking-tight md:leading-[0.85]"
+            }
             aria-label={standalone ? "Say Hello - Contact page heading" : "Say Hello - Contact section heading"}
           >
             Say <br className="md:hidden" />
@@ -52,6 +56,7 @@ export default function ContactsSection({ standalone = false }: ContactsSectionP
             <FormtectureContactBlock
               email="7inson.5amuel@proton.me"
               phone="+91 8319471976"
+              containerClassName={standalone ? "mt-[200px] pb-0 ml-[-40px]" : ""}
             />
           </div>
         </div>
