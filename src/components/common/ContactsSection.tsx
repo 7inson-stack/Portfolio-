@@ -20,21 +20,20 @@ export default function ContactsSection({ standalone = false }: ContactsSectionP
           : "bg-background -mx-4 px-4"
       }`}
     >
-      <div className="relative mx-auto flex w-full max-w-480 flex-col pt-20 pb-6 sm:pt-24 sm:pb-8 md:pt-20 md:pb-8">
-        {!standalone && (
-          <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-            <DotGridBackground
-              dotColor="rgba(255, 255, 255, 0.22)"
-              dotSize={2}
-              dotSpacing={26}
-              orbitSpeed={1.5}
-              impactRadius={120}
-              scaleOnHover={2.0}
-              enableRevolve={true}
-            />
-          </div>
-        )}
-
+      {!standalone && (
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+          <DotGridBackground
+            dotColor="rgba(255, 255, 255, 0.22)"
+            dotSize={2}
+            dotSpacing={26}
+            orbitSpeed={1.5}
+            impactRadius={120}
+            scaleOnHover={2.0}
+            enableRevolve={true}
+          />
+        </div>
+      )}
+      <div className="relative mx-auto flex w-full max-w-480 flex-1 flex-col pt-20 pb-6 sm:pt-24 sm:pb-8 md:pt-20 md:pb-8">
         <div className="relative z-10 flex flex-col gap-12 sm:gap-16 md:gap-24">
           <HeadingTag
             initial={{ opacity: 0, y: 48 }}

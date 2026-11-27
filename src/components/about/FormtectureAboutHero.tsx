@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
 import ParticleTextHeading from "./ParticleTextHeading";
-import ParticleEffectsWrapper from "./ParticleEffectsWrapper";
 
 export default function FormtectureAboutHero() {
   const containerRef = useRef<HTMLDivElement>(null);
